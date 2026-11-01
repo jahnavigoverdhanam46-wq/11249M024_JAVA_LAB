@@ -1,0 +1,17 @@
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class ShapesApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawRect(30, 40, 100, 60);
+
+        g.drawOval(160, 40, 70, 70);
+
+        g.drawLine(260, 40, 330, 100);
+
+        int[] x = {380, 340, 420};
+        int[] y = {100, 170, 170};
+
+        g.drawPolygon(x, y, 3);
+    }
+}

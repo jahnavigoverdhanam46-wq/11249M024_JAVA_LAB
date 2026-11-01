@@ -1,0 +1,19 @@
+
+public class MonthlySales {
+    public static void main(String[] args) {
+        int[] sales = {
+            12000, 15000, 9000, 18000, 21000, 17000,
+            25000, 14000, 11000, 23000, 19000, 16000
+        };
+
+        int max = sales[0], min = sales[0];
+
+        for (int value : sales) {
+            if (value > max) max = value;
+            if (value < min) min = value;
+        }
+
+        System.out.println("Highest sales: " + max);
+        System.out.println("Lowest sales: " + min);
+    }
+}

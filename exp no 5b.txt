@@ -1,0 +1,17 @@
+public class PredefinedExceptions {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0;
+            System.out.println(result);
+        } catch (ArithmeticException e) {
+            System.out.println("ArithmeticException: cannot divide by zero.");
+        }
+
+        try {
+            int age = Integer.parseInt("twenty");
+            System.out.println(age);
+        } catch (NumberFormatException e) {
+            System.out.println("NumberFormatException: enter age as digits.");
+        }
+    }
+}

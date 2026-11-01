@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class FeedbackAverage {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double[] ratings = new double[5];
+        double total = 0;
+
+        for (int i = 0; i < ratings.length; i++) {
+            System.out.print("Enter rating " + (i + 1) + ": ");
+            ratings[i] = sc.nextDouble();
+            total += ratings[i];
+        }
+
+        System.out.printf("Average rating: %.2f%n", total / ratings.length);
+        sc.close();
+    }
+}

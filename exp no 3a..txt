@@ -1,0 +1,14 @@
+public class EmployeeStringCompare {
+    public static void main(String[] args) {
+        String employee1 = "Anu";
+        String employee2 = "ANU";
+
+        if (employee1.equalsIgnoreCase(employee2))
+            System.out.println("Names match");
+        else
+            System.out.println("Names do not match");
+
+        System.out.println("Length: " + employee1.length());
+        System.out.println("Uppercase: " + employee1.toUpperCase());
+    }
+}

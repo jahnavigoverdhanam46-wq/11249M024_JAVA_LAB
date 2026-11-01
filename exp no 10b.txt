@@ -1,0 +1,18 @@
+public class CountThread implements Runnable {
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(i);
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                return;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        new Thread(new CountThread()).start();
+    }
+}

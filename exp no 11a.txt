@@ -1,0 +1,20 @@
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class ProfileFile {
+    public static void main(String[] args) throws IOException {
+        String profile = "Name: Ravi\nAge: 20\nFitness Goal: Healthy";
+
+        try (FileOutputStream out = new FileOutputStream("profile.txt")) {
+            out.write(profile.getBytes());
+        }
+
+        try (FileInputStream in = new FileInputStream("profile.txt")) {
+            int ch;
+
+            while ((ch = in.read()) != -1)
+                System.out.print((char) ch);
+        }
+    }
+}

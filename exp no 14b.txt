@@ -1,0 +1,28 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class BorderLayoutDemo {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Dashboard");
+
+        frame.setLayout(new BorderLayout(5, 5));
+
+        frame.add(
+            new JLabel("HEADER", SwingConstants.CENTER),
+            BorderLayout.NORTH
+        );
+
+        frame.add(
+            new JLabel("FOOTER", SwingConstants.CENTER),
+            BorderLayout.SOUTH
+        );
+
+        frame.add(new JButton("MENU"), BorderLayout.WEST);
+        frame.add(new JButton("TOOLS"), BorderLayout.EAST);
+        frame.add(new JTextArea("Main content area"), BorderLayout.CENTER);
+
+        frame.setSize(500, 300);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}

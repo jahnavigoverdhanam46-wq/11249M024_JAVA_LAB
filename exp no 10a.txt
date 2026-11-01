@@ -1,0 +1,24 @@
+class FoodTask implements Runnable {
+    private String task;
+
+    FoodTask(String task) {
+        this.task = task;
+    }
+
+    public void run() {
+        System.out.println(task);
+    }
+}
+
+public class FoodDelivery {
+    public static void main(String[] args) throws InterruptedException {
+        Thread order = new Thread(new FoodTask("Order placed."));
+        Thread delivery = new Thread(new FoodTask("Order delivered."));
+
+        order.start();
+        order.join();
+
+        delivery.start();
+        delivery.join();
+    }
+}

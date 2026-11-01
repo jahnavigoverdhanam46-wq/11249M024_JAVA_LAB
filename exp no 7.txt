@@ -1,0 +1,49 @@
+class Student {
+    int rollNo;
+    String name;
+
+    Student(int rollNo, String name) {
+        this.rollNo = rollNo;
+        this.name = name;
+    }
+}
+
+class Marks extends Student {
+    int[] marks;
+
+    Marks(int rollNo, String name, int[] marks) {
+        super(rollNo, name);
+        this.marks = marks;
+    }
+}
+
+class Result extends Marks {
+    Result(int rollNo, String name, int[] marks) {
+        super(rollNo, name, marks);
+    }
+
+    void display() {
+        int total = 0;
+
+        for (int m : marks)
+            total += m;
+
+        double average = total / (double) marks.length;
+
+        String grade = average >= 90 ? "A"
+                : average >= 75 ? "B"
+                : average >= 60 ? "C"
+                : average >= 40 ? "D" : "F";
+
+        System.out.println("Roll No: " + rollNo + ", Name: " + name);
+        System.out.println("Total: " + total);
+        System.out.printf("Average: %.2f%nGrade: %s%n", average, grade);
+    }
+}
+
+public class StudentResult {
+    public static void main(String[] args) {
+        int[] marks = {88, 92, 76, 85, 90};
+        new Result(101, "Priya", marks).display();
+    }
+}
